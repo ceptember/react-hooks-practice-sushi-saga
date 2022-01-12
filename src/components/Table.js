@@ -1,15 +1,20 @@
-import React from "react";
+import React, {useState} from "react";
 
-function Table({ plates = [] }) {
-  // renders an empty plate for every element in the array
-  const emptyPlates = plates.map((_, index) => (
+function Table({ eaten, money }) {
+
+  
+
+ // eaten.reduce( (a, b) => a.price + b.price )
+
+  const emptyPlates = eaten.map((_, index) => (
     <div key={index} className="empty-plate" style={{ top: -7 * index }} />
   ));
+
 
   return (
     <>
       <h1 className="remaining">
-        You have: ${/* Give me how much money I have left */} remaining!
+        You have: ${money} remaining!
       </h1>
       <div className="table">
         <div className="stack">{emptyPlates}</div>
